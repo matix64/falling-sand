@@ -2,7 +2,7 @@
 
 A very simple falling sand game made with Lua and [LÖVE](https://love2d.org/)
 
-![demo gif](https://user-images.githubusercontent.com/102701307/186303004-981fcff5-1446-4883-ae57-3cb5b39a9db1.GIF)
+![demo gif](https://user-images.githubusercontent.com/102701307/186446484-47f46f25-99ea-4924-a42a-77a8aa58f97b.gif)
 
 ## Usage
 
