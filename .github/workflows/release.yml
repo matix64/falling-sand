@@ -22,6 +22,7 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ steps.love-build.outputs.love-filename }}
           asset_name: falling-sand
+          asset_content_type: application/zip
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -29,6 +30,7 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ steps.love-build.outputs.win64-filename }}
           asset_name: falling-sand-win64
+          asset_content_type: application/zip
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -36,6 +38,7 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ steps.love-build.outputs.win32-filename }}
           asset_name: falling-sand-win32
+          asset_content_type: application/zip
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -43,3 +46,4 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ steps.love-build.outputs.macos-filename }}
           asset_name: falling-sand-macos
+          asset_content_type: application/zip
