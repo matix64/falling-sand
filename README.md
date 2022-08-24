@@ -6,7 +6,7 @@ A very simple falling sand game made with Lua and [LÖVE](https://love2d.org/)
 
 ## Usage
 
-If you're using Windows or Mac, you can play using the binaries from our [github releases](https://github.com/matix64/falling-sand/releases)
+If you're using Windows or Mac, you can play using the binaries from [github releases](https://github.com/matix64/falling-sand/releases)
 
 If you're on Linux or want to run the game from source:
 
