@@ -1,0 +1,45 @@
+name: release
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Build the game
+      - uses: nhartland/love-build@master
+        id: love-build
+        with:
+          app_name: 'falling-sand'
+          love_version: '11.4'
+          source_dir: 'src'
+      # Add artifacts to release
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ steps.love-build.outputs.love-filename }}
+          asset_name: falling-sand
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ steps.love-build.outputs.win64-filename }}
+          asset_name: falling-sand-win64
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ steps.love-build.outputs.win32-filename }}
+          asset_name: falling-sand-win32
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ steps.love-build.outputs.macos-filename }}
+          asset_name: falling-sand-macos
